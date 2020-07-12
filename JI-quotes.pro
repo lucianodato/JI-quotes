@@ -23,7 +23,9 @@ HEADERS += \
     mainwindow.h
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    quote.ui \
+    topics.ui
 
 TRANSLATIONS += \
     JI-quotes_es_AR.ts
