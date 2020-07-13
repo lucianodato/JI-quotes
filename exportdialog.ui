@@ -17,14 +17,14 @@
    <item row="0" column="0">
     <widget class="QRadioButton" name="radioButton">
      <property name="text">
-      <string>Exportar Todo</string>
+      <string>Export All</string>
      </property>
     </widget>
    </item>
    <item row="2" column="0">
     <widget class="QRadioButton" name="radioButton_2">
      <property name="text">
-      <string>Exportar frases</string>
+      <string>Exportar quotes</string>
      </property>
     </widget>
    </item>
@@ -37,13 +37,13 @@
        </property>
        <widget class="QLabel" name="label">
         <property name="text">
-         <string>Desde</string>
+         <string>From</string>
         </property>
        </widget>
        <widget class="QSpinBox" name="spinBox"/>
        <widget class="QLabel" name="label_2">
         <property name="text">
-         <string>Hasta</string>
+         <string>To</string>
         </property>
        </widget>
        <widget class="QSpinBox" name="spinBox_2"/>
@@ -54,7 +54,7 @@
    <item row="4" column="0">
     <widget class="QRadioButton" name="radioButton_3">
      <property name="text">
-      <string>Exportar a partir de</string>
+      <string>Export from</string>
      </property>
     </widget>
    </item>
@@ -64,7 +64,7 @@
    <item row="5" column="1">
     <widget class="QPushButton" name="pushButton">
      <property name="text">
-      <string>Exportar</string>
+      <string>Export</string>
      </property>
     </widget>
    </item>

@@ -20,14 +20,14 @@
    <item row="1" column="0">
     <widget class="QPushButton" name="pushButton">
      <property name="text">
-      <string>Agregar</string>
+      <string>Add</string>
      </property>
     </widget>
    </item>
    <item row="1" column="1">
     <widget class="QPushButton" name="pushButton_2">
      <property name="text">
-      <string>Eliminar</string>
+      <string>Remove</string>
      </property>
     </widget>
    </item>

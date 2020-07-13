@@ -22,7 +22,7 @@
         <item>
          <widget class="QLabel" name="label_4">
           <property name="text">
-           <string>Buscar</string>
+           <string>Search</string>
           </property>
          </widget>
         </item>
@@ -32,28 +32,28 @@
         <item>
          <widget class="QRadioButton" name="radioButton">
           <property name="text">
-           <string>Autor</string>
+           <string>Author</string>
           </property>
          </widget>
         </item>
         <item>
          <widget class="QRadioButton" name="radioButton_2">
           <property name="text">
-           <string>Tema</string>
+           <string>Topic</string>
           </property>
          </widget>
         </item>
         <item>
          <widget class="QRadioButton" name="radioButton_3">
           <property name="text">
-           <string>Contenido</string>
+           <string>Content</string>
           </property>
          </widget>
         </item>
         <item>
          <widget class="QCheckBox" name="checkBox">
           <property name="text">
-           <string>Activar filtro por fecha</string>
+           <string>Enable date filtering</string>
           </property>
          </widget>
         </item>
@@ -70,21 +70,21 @@
         <item>
          <widget class="QPushButton" name="pushButton_3">
           <property name="text">
-           <string>Agregar</string>
+           <string>Add</string>
           </property>
          </widget>
         </item>
         <item>
          <widget class="QPushButton" name="pushButton_5">
           <property name="text">
-           <string>Modificar</string>
+           <string>Edit</string>
           </property>
          </widget>
         </item>
         <item>
          <widget class="QPushButton" name="pushButton_4">
           <property name="text">
-           <string>Eliminar</string>
+           <string>Remove</string>
           </property>
          </widget>
         </item>
@@ -129,17 +129,17 @@
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionExport">
    <property name="text">
-    <string>Exportar</string>
+    <string>Export</string>
    </property>
   </action>
   <action name="actionQuit">
    <property name="text">
-    <string>Salir</string>
+    <string>Exit</string>
    </property>
   </action>
   <action name="actionTopics">
    <property name="text">
-    <string>Temas</string>
+    <string>Topics</string>
    </property>
   </action>
  </widget>
