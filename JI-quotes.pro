@@ -16,14 +16,23 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    exportdialog.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    quotedialog.cpp \
+    topicsdialog.cpp
 
 HEADERS += \
-    mainwindow.h
+    exportdialog.h \
+    mainwindow.h \
+    quotedialog.h \
+    topicsdialog.h
 
 FORMS += \
-    mainwindow.ui
+    exportdialog.ui \
+    mainwindow.ui \
+    quotedialog.ui \
+    topicsdialog.ui
 
 TRANSLATIONS += \
     JI-quotes_es_AR.ts

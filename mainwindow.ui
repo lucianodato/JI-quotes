@@ -120,24 +120,24 @@
     <property name="title">
      <string>Menu</string>
     </property>
-    <addaction name="actionTemas"/>
-    <addaction name="actionImprimir"/>
-    <addaction name="actionSalir"/>
+    <addaction name="actionTopics"/>
+    <addaction name="actionExport"/>
+    <addaction name="actionQuit"/>
    </widget>
    <addaction name="menuMenu"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <action name="actionImprimir">
+  <action name="actionExport">
    <property name="text">
-    <string>Imprimir</string>
+    <string>Exportar</string>
    </property>
   </action>
-  <action name="actionSalir">
+  <action name="actionQuit">
    <property name="text">
     <string>Salir</string>
    </property>
   </action>
-  <action name="actionTemas">
+  <action name="actionTopics">
    <property name="text">
     <string>Temas</string>
    </property>

@@ -1,5 +1,4 @@
 #include "mainwindow.h"
-#include "topics.h"
 #include "ui_mainwindow.h"
 
 MainWindow::MainWindow(QWidget *parent)
@@ -7,6 +6,9 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    topicsDialog = new TopicsDialog(this);
+    quoteToAdd = new QuoteDialog(this);
+    exportDialog = new ExportDialog(this);
 }
 
 MainWindow::~MainWindow()
@@ -15,6 +17,17 @@ MainWindow::~MainWindow()
 }
 
 
-void MainWindow::on_actionTemas_triggered()
+void MainWindow::on_actionTopics_triggered()
 {
+    topicsDialog->exec();
+}
+
+void MainWindow::on_pushButton_3_clicked()
+{
+    quoteToAdd->exec();
+}
+
+void MainWindow::on_actionExport_triggered()
+{
+    exportDialog->exec();
 }
