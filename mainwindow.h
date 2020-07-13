@@ -21,9 +21,13 @@ public:
 private slots:
     void on_actionTopics_triggered();
 
-    void on_pushButton_3_clicked();
-
     void on_actionExport_triggered();
+
+    void on_actionAdd_triggered();
+
+    void on_actionEdit_triggered();
+
+    void on_actionQuit_triggered();
 
 private:
     Ui::MainWindow *ui;

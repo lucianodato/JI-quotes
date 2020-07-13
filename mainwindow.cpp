@@ -16,18 +16,27 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-
 void MainWindow::on_actionTopics_triggered()
 {
     topicsDialog->exec();
 }
 
-void MainWindow::on_pushButton_3_clicked()
+void MainWindow::on_actionExport_triggered()
+{
+    exportDialog->exec();
+}
+
+void MainWindow::on_actionAdd_triggered()
 {
     quoteDialog->exec();
 }
 
-void MainWindow::on_actionExport_triggered()
+void MainWindow::on_actionEdit_triggered()
 {
-    exportDialog->exec();
+    quoteDialog->exec();
+}
+
+void MainWindow::on_actionQuit_triggered()
+{
+    MainWindow::close();
 }
