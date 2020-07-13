@@ -7,7 +7,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     topicsDialog = new TopicsDialog(this);
-    quoteToAdd = new QuoteDialog(this);
+    quoteDialog = new QuoteDialog(this);
     exportDialog = new ExportDialog(this);
 }
 
@@ -24,7 +24,7 @@ void MainWindow::on_actionTopics_triggered()
 
 void MainWindow::on_pushButton_3_clicked()
 {
-    quoteToAdd->exec();
+    quoteDialog->exec();
 }
 
 void MainWindow::on_actionExport_triggered()

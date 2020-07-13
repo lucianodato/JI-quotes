@@ -28,7 +28,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
     TopicsDialog *topicsDialog;
-    QuoteDialog *quoteToAdd;
+    QuoteDialog *quoteDialog;
     ExportDialog *exportDialog;
 };
 #endif // MAINWINDOW_H
