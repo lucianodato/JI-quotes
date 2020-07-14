@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/">
+        <file>custom-icons/cloud.svg</file>
+        <file>custom-icons/file-arrow-down.svg</file>
+        <file>custom-icons/file-earmark-minus.svg</file>
+        <file>custom-icons/file-earmark-plus.svg</file>
+        <file>custom-icons/pencil-square.svg</file>
+        <file>custom-icons/plus.svg</file>
+        <file>custom-icons/search.svg</file>
+        <file>custom-icons/trash.svg</file>
+        <file>custom-icons/x.svg</file>
+    </qresource>
+</RCC>
