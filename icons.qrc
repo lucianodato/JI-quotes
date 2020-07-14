@@ -1,13 +1,16 @@
 <RCC>
     <qresource prefix="/">
-        <file>custom-icons/cloud.svg</file>
-        <file>custom-icons/file-arrow-down.svg</file>
-        <file>custom-icons/file-earmark-minus.svg</file>
-        <file>custom-icons/file-earmark-plus.svg</file>
-        <file>custom-icons/pencil-square.svg</file>
-        <file>custom-icons/plus.svg</file>
-        <file>custom-icons/search.svg</file>
-        <file>custom-icons/trash.svg</file>
-        <file>custom-icons/x.svg</file>
+        <file>custom-icons/circle-minus.png</file>
+        <file>custom-icons/circle-plus.png</file>
+        <file>custom-icons/file-download.png</file>
+        <file>custom-icons/logout.png</file>
+        <file>custom-icons/message-circle.png</file>
+        <file>custom-icons/search.png</file>
+        <file>custom-icons/circle-x.svg</file>
+        <file>custom-icons/floppy-disk.png</file>
+        <file>custom-icons/file-minus.png</file>
+        <file>custom-icons/file-plus.png</file>
+        <file>custom-icons/file-text.png</file>
+        <file>custom-icons/license.png</file>
     </qresource>
 </RCC>

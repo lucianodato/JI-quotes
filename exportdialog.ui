@@ -70,6 +70,10 @@
      <property name="text">
       <string>Export</string>
      </property>
+     <property name="icon">
+      <iconset resource="icons.qrc">
+       <normaloff>:/custom-icons/file-download.png</normaloff>:/custom-icons/file-download.png</iconset>
+     </property>
     </widget>
    </item>
   </layout>
@@ -79,6 +83,8 @@
   <tabstop>spinBox</tabstop>
   <tabstop>spinBox_2</tabstop>
  </tabstops>
- <resources/>
+ <resources>
+  <include location="icons.qrc"/>
+ </resources>
  <connections/>
 </ui>

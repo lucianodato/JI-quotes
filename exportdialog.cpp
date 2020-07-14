@@ -12,3 +12,8 @@ ExportDialog::~ExportDialog()
 {
     delete ui;
 }
+
+void ExportDialog::on_ExportQuotes_clicked()
+{
+    ExportDialog::close();
+}

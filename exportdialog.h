@@ -15,6 +15,9 @@ public:
     explicit ExportDialog(QWidget *parent = nullptr);
     ~ExportDialog();
 
+private slots:
+    void on_ExportQuotes_clicked();
+
 private:
     Ui::ExportDialog *ui;
 };

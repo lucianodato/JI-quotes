@@ -12,3 +12,8 @@ TopicsDialog::~TopicsDialog()
 {
     delete ui;
 }
+
+void TopicsDialog::on_CancelButton_clicked()
+{
+    TopicsDialog::close();
+}
