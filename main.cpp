@@ -8,8 +8,10 @@ int main(int argc, char *argv[])
     QApplication application(argc, argv);
 
     QTranslator translator;
-    translator.load(QLocale::system(), QStringLiteral("JI-quotes_"));
-    application.installTranslator(&translator);
+    if (translator.load(":/translations/JI-quotes_es_AR.qm"))
+    {
+        application.installTranslator(&translator);
+    }
 
     MainWindow windows;
     windows.show();

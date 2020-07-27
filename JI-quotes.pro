@@ -38,7 +38,7 @@ TRANSLATIONS += \
     JI-quotes_es_AR.ts
 
 RESOURCES += \
-    icons.qrc
+    resources.qrc
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

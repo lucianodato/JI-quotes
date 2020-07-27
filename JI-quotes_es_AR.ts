@@ -24,12 +24,12 @@
         <translation>Desde</translation>
     </message>
     <message>
-        <location filename="exportdialog.ui" line="59"/>
+        <location filename="exportdialog.ui" line="63"/>
         <source>to</source>
         <translation>hasta</translation>
     </message>
     <message>
-        <location filename="exportdialog.ui" line="71"/>
+        <location filename="exportdialog.ui" line="82"/>
         <source>Export</source>
         <translation>Exportar</translation>
     </message>
@@ -42,67 +42,78 @@
         <translation>JI-Frases</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="25"/>
         <source>Search</source>
-        <translation>Buscar</translation>
+        <translation type="vanished">Buscar</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="35"/>
         <source>Author</source>
-        <translation>Autor</translation>
+        <translation type="vanished">Autor</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="42"/>
         <source>Topic</source>
-        <translation>Tema</translation>
+        <translation type="vanished">Tema</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="49"/>
         <source>Content</source>
-        <translation>Contenido</translation>
+        <translation type="vanished">Contenido</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="56"/>
+        <location filename="mainwindow.ui" line="59"/>
         <source>Enable date filtering</source>
         <translation>Activar filtrado por fecha</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="83"/>
+        <location filename="mainwindow.ui" line="94"/>
         <source>Menu</source>
         <translation>Menu</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="94"/>
         <source>toolBar</source>
-        <translation>Barra de Herramientas</translation>
+        <translation type="vanished">Barra de Herramientas</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="111"/>
+        <location filename="mainwindow.ui" line="52"/>
+        <source>Filter quotes by any field</source>
+        <translation>Filtre la frase por campo</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="66"/>
+        <source>MM/dd/yyyy</source>
+        <oldsource>dd/MM/yyyy</oldsource>
+        <translation>dd/MM/yyyy</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="105"/>
+        <source>ToolBar</source>
+        <translation>Barra de herramientas</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="129"/>
         <source>Export</source>
         <translation>Exportar</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="116"/>
+        <location filename="mainwindow.ui" line="138"/>
         <source>Quit</source>
         <translation>Salir</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="121"/>
+        <location filename="mainwindow.ui" line="147"/>
         <source>Topics</source>
         <translation>Temas</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="126"/>
+        <location filename="mainwindow.ui" line="156"/>
         <source>Add</source>
         <translation>Agregar</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="131"/>
+        <location filename="mainwindow.ui" line="165"/>
         <source>Edit</source>
         <translation>Modificar</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="136"/>
+        <location filename="mainwindow.ui" line="174"/>
         <source>Remove</source>
         <translation>Eliminar</translation>
     </message>
@@ -120,14 +131,35 @@
         <translation>Contenido</translation>
     </message>
     <message>
-        <location filename="quotedialog.ui" line="30"/>
+        <location filename="quotedialog.ui" line="27"/>
+        <source>Write the quote here</source>
+        <translation>Escriba la frase aqui</translation>
+    </message>
+    <message>
+        <location filename="quotedialog.ui" line="34"/>
         <source>Author</source>
         <translation>Autor</translation>
     </message>
     <message>
-        <location filename="quotedialog.ui" line="40"/>
+        <location filename="quotedialog.ui" line="41"/>
+        <source>Write the author for the quote</source>
+        <oldsource>Write the author for the quote </oldsource>
+        <translation>Escriba el autor de la frase</translation>
+    </message>
+    <message>
+        <location filename="quotedialog.ui" line="48"/>
         <source>Topic</source>
         <translation>Tema</translation>
+    </message>
+    <message>
+        <location filename="quotedialog.ui" line="64"/>
+        <source>Cancel</source>
+        <translation>Cancelar</translation>
+    </message>
+    <message>
+        <location filename="quotedialog.ui" line="75"/>
+        <source>Save</source>
+        <translation>Guardar</translation>
     </message>
 </context>
 <context>
@@ -138,14 +170,19 @@
         <translation>Temas</translation>
     </message>
     <message>
-        <location filename="topicsdialog.ui" line="20"/>
+        <location filename="topicsdialog.ui" line="25"/>
         <source>Add</source>
         <translation>Agregar</translation>
     </message>
     <message>
-        <location filename="topicsdialog.ui" line="27"/>
+        <location filename="topicsdialog.ui" line="36"/>
         <source>Remove</source>
         <translation>Eliminar</translation>
+    </message>
+    <message>
+        <location filename="topicsdialog.ui" line="60"/>
+        <source>Cancel</source>
+        <translation>Cancelar</translation>
     </message>
 </context>
 </TS>

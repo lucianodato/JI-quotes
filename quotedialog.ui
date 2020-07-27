@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>Quote</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="resources.qrc">
+    <normaloff>:/icons/custom-icons/license.png</normaloff>:/icons/custom-icons/license.png</iconset>
+  </property>
   <layout class="QFormLayout" name="formLayout">
    <item row="0" column="0">
     <widget class="QLabel" name="label_2">
@@ -38,7 +42,7 @@
    <item row="1" column="1">
     <widget class="QLineEdit" name="lineEdit">
      <property name="placeholderText">
-      <string>Write the author for the quote </string>
+      <string>Write the author for the quote</string>
      </property>
     </widget>
    </item>
@@ -64,8 +68,8 @@
         <string>Cancel</string>
        </property>
        <property name="icon">
-        <iconset resource="icons.qrc">
-         <normaloff>:/custom-icons/circle-x.svg</normaloff>:/custom-icons/circle-x.svg</iconset>
+        <iconset resource="resources.qrc">
+         <normaloff>:/icons/custom-icons/circle-x.svg</normaloff>:/icons/custom-icons/circle-x.svg</iconset>
        </property>
       </widget>
      </item>
@@ -75,8 +79,8 @@
         <string>Save</string>
        </property>
        <property name="icon">
-        <iconset resource="icons.qrc">
-         <normaloff>:/custom-icons/floppy-disk.png</normaloff>:/custom-icons/floppy-disk.png</iconset>
+        <iconset resource="resources.qrc">
+         <normaloff>:/icons/custom-icons/floppy-disk.png</normaloff>:/icons/custom-icons/floppy-disk.png</iconset>
        </property>
       </widget>
      </item>
@@ -85,7 +89,7 @@
   </layout>
  </widget>
  <resources>
-  <include location="icons.qrc"/>
+  <include location="resources.qrc"/>
  </resources>
  <connections/>
 </ui>

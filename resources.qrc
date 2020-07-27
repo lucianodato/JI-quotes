@@ -1,5 +1,5 @@
 <RCC>
-    <qresource prefix="/">
+    <qresource prefix="/icons">
         <file>custom-icons/circle-minus.png</file>
         <file>custom-icons/circle-plus.png</file>
         <file>custom-icons/file-download.png</file>
@@ -12,5 +12,8 @@
         <file>custom-icons/file-plus.png</file>
         <file>custom-icons/file-text.png</file>
         <file>custom-icons/license.png</file>
+    </qresource>
+    <qresource prefix="/translations">
+        <file>JI-quotes_es_AR.qm</file>
     </qresource>
 </RCC>

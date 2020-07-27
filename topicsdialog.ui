@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>Topics</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="resources.qrc">
+    <normaloff>:/icons/custom-icons/license.png</normaloff>:/icons/custom-icons/license.png</iconset>
+  </property>
   <layout class="QHBoxLayout" name="horizontalLayout">
    <item>
     <widget class="QListView" name="listView"/>
@@ -25,8 +29,8 @@
         <string>Add</string>
        </property>
        <property name="icon">
-        <iconset resource="icons.qrc">
-         <normaloff>:/custom-icons/circle-plus.png</normaloff>:/custom-icons/circle-plus.png</iconset>
+        <iconset resource="resources.qrc">
+         <normaloff>:/icons/custom-icons/circle-plus.png</normaloff>:/icons/custom-icons/circle-plus.png</iconset>
        </property>
       </widget>
      </item>
@@ -36,8 +40,8 @@
         <string>Remove</string>
        </property>
        <property name="icon">
-        <iconset resource="icons.qrc">
-         <normaloff>:/custom-icons/circle-minus.png</normaloff>:/custom-icons/circle-minus.png</iconset>
+        <iconset resource="resources.qrc">
+         <normaloff>:/icons/custom-icons/circle-minus.png</normaloff>:/icons/custom-icons/circle-minus.png</iconset>
        </property>
       </widget>
      </item>
@@ -60,8 +64,8 @@
         <string>Cancel</string>
        </property>
        <property name="icon">
-        <iconset resource="icons.qrc">
-         <normaloff>:/custom-icons/circle-x.svg</normaloff>:/custom-icons/circle-x.svg</iconset>
+        <iconset resource="resources.qrc">
+         <normaloff>:/icons/custom-icons/circle-x.svg</normaloff>:/icons/custom-icons/circle-x.svg</iconset>
        </property>
       </widget>
      </item>
@@ -70,7 +74,7 @@
   </layout>
  </widget>
  <resources>
-  <include location="icons.qrc"/>
+  <include location="resources.qrc"/>
  </resources>
  <connections/>
 </ui>
