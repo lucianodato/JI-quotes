@@ -19,15 +19,15 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_actionTopics_triggered();
+    void on_actionQuit_triggered();
 
     void on_actionExport_triggered();
+
+    void on_actionTopics_triggered();
 
     void on_actionAdd_triggered();
 
     void on_actionEdit_triggered();
-
-    void on_actionQuit_triggered();
 
 private:
     Ui::MainWindow *ui;

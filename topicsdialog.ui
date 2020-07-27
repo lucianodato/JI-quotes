@@ -13,42 +13,59 @@
   <property name="windowTitle">
    <string>Topics</string>
   </property>
-  <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="2">
-    <widget class="QPushButton" name="AddTopic">
-     <property name="text">
-      <string>Add</string>
-     </property>
-     <property name="icon">
-      <iconset resource="icons.qrc">
-       <normaloff>:/custom-icons/circle-plus.png</normaloff>:/custom-icons/circle-plus.png</iconset>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="2">
-    <widget class="QPushButton" name="RemoveTopic">
-     <property name="text">
-      <string>Remove</string>
-     </property>
-     <property name="icon">
-      <iconset resource="icons.qrc">
-       <normaloff>:/custom-icons/circle-minus.png</normaloff>:/custom-icons/circle-minus.png</iconset>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="0" rowspan="4" colspan="2">
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <item>
     <widget class="QListView" name="listView"/>
    </item>
-   <item row="3" column="2">
-    <widget class="QPushButton" name="CancelButton">
-     <property name="text">
-      <string>Cancel</string>
-     </property>
-     <property name="icon">
-      <iconset resource="icons.qrc">
-       <normaloff>:/custom-icons/circle-x.svg</normaloff>:/custom-icons/circle-x.svg</iconset>
-     </property>
-    </widget>
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QPushButton" name="AddTopic">
+       <property name="text">
+        <string>Add</string>
+       </property>
+       <property name="icon">
+        <iconset resource="icons.qrc">
+         <normaloff>:/custom-icons/circle-plus.png</normaloff>:/custom-icons/circle-plus.png</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="RemoveTopic">
+       <property name="text">
+        <string>Remove</string>
+       </property>
+       <property name="icon">
+        <iconset resource="icons.qrc">
+         <normaloff>:/custom-icons/circle-minus.png</normaloff>:/custom-icons/circle-minus.png</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="verticalSpacer">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="CancelButton">
+       <property name="text">
+        <string>Cancel</string>
+       </property>
+       <property name="icon">
+        <iconset resource="icons.qrc">
+         <normaloff>:/custom-icons/circle-x.svg</normaloff>:/custom-icons/circle-x.svg</iconset>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </item>
   </layout>
  </widget>

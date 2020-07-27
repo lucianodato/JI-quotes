@@ -16,27 +16,27 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_actionTopics_triggered()
+void MainWindow::on_actionQuit_triggered()
 {
-    topicsDialog->exec();
+    this->close();
 }
 
 void MainWindow::on_actionExport_triggered()
 {
-    exportDialog->exec();
+    exportDialog->open();
+}
+
+void MainWindow::on_actionTopics_triggered()
+{
+    topicsDialog->open();
 }
 
 void MainWindow::on_actionAdd_triggered()
 {
-    quoteDialog->exec();
+    quoteDialog->open();
 }
 
 void MainWindow::on_actionEdit_triggered()
 {
-    quoteDialog->exec();
-}
-
-void MainWindow::on_actionQuit_triggered()
-{
-    MainWindow::close();
+    quoteDialog->open();
 }
