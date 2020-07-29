@@ -19,6 +19,14 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+    enum quotes {
+        quoteId,
+        content,
+        author,
+        quoteTopic
+    };
+    Q_ENUM(quotes)
+
 private slots:
     void on_actionQuit_triggered();
 
@@ -35,5 +43,8 @@ private:
     TopicsDialog *topicsDialog;
     QuoteDialog *quoteDialog;
     ExportDialog *exportDialog;
+
+    QSqlTableModel *quotesModel;
+    QMetaEnum tableEnum = QMetaEnum::fromType<quotes>();
 };
 #endif // MAINWINDOW_H

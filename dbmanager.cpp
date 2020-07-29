@@ -13,8 +13,6 @@ DbManager::DbManager()
 
     if(database.isOpen())
     {
-        qDebug() << "Database opened successfully";
-
         query = QSqlQuery(database);
     }
     else
@@ -35,6 +33,6 @@ void DbManager::CreateSchema()
 {
     if (!query.exec(quotesTableDefinition) && !query.exec(topicsTableDefinition))
     {
-        qDebug() << "Table already exists";
+        qDebug() << "Error running query";
     }
 }

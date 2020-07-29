@@ -9,6 +9,30 @@ MainWindow::MainWindow(QWidget *parent)
     this->topicsDialog = new TopicsDialog(this);
     this->quoteDialog = new QuoteDialog(this);
     this->exportDialog = new ExportDialog(this);
+
+    //Model Init
+    quotesModel = new QSqlTableModel();
+    quotesModel->setTable(tableEnum.name());
+    quotesModel->setEditStrategy(QSqlTableModel::OnManualSubmit);
+    quotesModel->select();
+    quotesModel->setHeaderData(quotes::quoteId, Qt::Horizontal,
+                              tr(tableEnum.key(quotes::quoteId)));
+    quotesModel->setHeaderData(quotes::content, Qt::Horizontal,
+                              tr(tableEnum.key(quotes::content)));
+    quotesModel->setHeaderData(quotes::author, Qt::Horizontal,
+                              tr(tableEnum.key(quotes::author)));
+    quotesModel->setHeaderData(quotes::quoteTopic, Qt::Horizontal,
+                              tr(tableEnum.key(quotes::quoteTopic)));
+
+    //View Init
+    ui->tableView->setModel(quotesModel);
+    ui->tableView->hideColumn(quotes::quoteId);
+    ui->tableView->setEditTriggers(QAbstractItemView::NoEditTriggers);
+    ui->tableView->setSelectionMode(QAbstractItemView::SingleSelection);
+    ui->tableView->horizontalHeader()->setSectionResizeMode(quotes::content, QHeaderView::Stretch);
+    ui->tableView->horizontalHeader()->setSectionResizeMode(quotes::author, QHeaderView::ResizeToContents);
+    ui->tableView->horizontalHeader()->setSectionResizeMode(quotes::quoteTopic, QHeaderView::ResizeToContents);
+    ui->tableView->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
 }
 
 MainWindow::~MainWindow()

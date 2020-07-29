@@ -9,8 +9,8 @@ class DbManager
 {
 public:
     const QString databasepath = "database.db";
-    const QString quotesTableDefinition = "create table quotes (quoteId integer primary key, content varchar(2000), author varchar(100), quoteTopic varchar(50))";
-    const QString topicsTableDefinition = "create table topics (topicId integer primary key, name varchar(50))";
+    const QString quotesTableDefinition = "create table if not exists quotes (quoteId integer primary key, content varchar(2000), author varchar(100), quoteTopic varchar(50))";
+    const QString topicsTableDefinition = "create table if not exists topics (topicId integer primary key, name varchar(50))";
 
     DbManager();
     ~DbManager();

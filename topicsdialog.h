@@ -32,6 +32,7 @@ private slots:
 
 private:
     Ui::TopicsDialog *ui;
+
     QSqlTableModel *topicModel;
     QMetaEnum tableEnum = QMetaEnum::fromType<topics>();
 };
