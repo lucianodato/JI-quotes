@@ -15,10 +15,10 @@ QuoteDialog::~QuoteDialog()
 
 void QuoteDialog::on_CancelButton_clicked()
 {
-    QuoteDialog::close();
+    this->close();
 }
 
 void QuoteDialog::on_SaveButton_clicked()
 {
-    QuoteDialog::close();
+    this->close();
 }

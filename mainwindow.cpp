@@ -6,9 +6,9 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    topicsDialog = new TopicsDialog(this);
-    quoteDialog = new QuoteDialog(this);
-    exportDialog = new ExportDialog(this);
+    this->topicsDialog = new TopicsDialog(this);
+    this->quoteDialog = new QuoteDialog(this);
+    this->exportDialog = new ExportDialog(this);
 }
 
 MainWindow::~MainWindow()

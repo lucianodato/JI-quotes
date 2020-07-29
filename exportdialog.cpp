@@ -15,5 +15,5 @@ ExportDialog::~ExportDialog()
 
 void ExportDialog::on_ExportQuotes_clicked()
 {
-    ExportDialog::close();
+    this->close();
 }
