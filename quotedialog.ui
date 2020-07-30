@@ -25,13 +25,6 @@
      </property>
     </widget>
    </item>
-   <item row="0" column="1">
-    <widget class="QTextEdit" name="textEdit">
-     <property name="placeholderText">
-      <string>Write the quote here</string>
-     </property>
-    </widget>
-   </item>
    <item row="1" column="0">
     <widget class="QLabel" name="label_3">
      <property name="text">
@@ -63,15 +56,17 @@
    <item row="3" column="0" colspan="2">
     <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
-      <widget class="QPushButton" name="CancelButton">
-       <property name="text">
-        <string>Cancel</string>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
        </property>
-       <property name="icon">
-        <iconset resource="resources.qrc">
-         <normaloff>:/icons/custom-icons/circle-x.svg</normaloff>:/icons/custom-icons/circle-x.svg</iconset>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
        </property>
-      </widget>
+      </spacer>
      </item>
      <item>
       <widget class="QPushButton" name="SaveButton">
@@ -85,6 +80,13 @@
       </widget>
      </item>
     </layout>
+   </item>
+   <item row="0" column="1">
+    <widget class="QPlainTextEdit" name="plainTextEdit">
+     <property name="placeholderText">
+      <string>Write your quote here</string>
+     </property>
+    </widget>
    </item>
   </layout>
  </widget>

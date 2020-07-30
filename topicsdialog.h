@@ -2,8 +2,9 @@
 #define TOPICS_H
 
 #include <QDialog>
-#include <QSqlTableModel>
-#include <QMetaEnum>
+#include <QSqlRelationalTableModel>
+
+#include "dbmanager.h"
 
 namespace Ui {
 class TopicsDialog;
@@ -14,14 +15,9 @@ class TopicsDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit TopicsDialog(QWidget *parent = nullptr);
+    explicit TopicsDialog(QWidget *parent = nullptr,
+                          QSqlTableModel *topicModel = nullptr);
     ~TopicsDialog();
-
-    enum topics {
-        topicId,
-        Name
-    };
-    Q_ENUM(topics)
 
 private slots:
     void on_AddTopic_clicked();
@@ -34,7 +30,8 @@ private:
     Ui::TopicsDialog *ui;
 
     QSqlTableModel *topicModel;
-    QMetaEnum tableEnum = QMetaEnum::fromType<topics>();
+
+    QMetaEnum topicTableEnum = QMetaEnum::fromType<DbManager::topics>();
 };
 
 #endif // TOPICS_H

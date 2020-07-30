@@ -1,25 +1,20 @@
 #include "topicsdialog.h"
 #include "ui_topicsdialog.h"
 
-TopicsDialog::TopicsDialog(QWidget *parent) :
+TopicsDialog::TopicsDialog(QWidget *parent,
+                           QSqlTableModel *topicModel) :
     QDialog(parent),
     ui(new Ui::TopicsDialog)
 {
     ui->setupUi(this);
 
     //Model Init
-    topicModel = new QSqlTableModel();
-    topicModel->setTable(tableEnum.name());
-    topicModel->setEditStrategy(QSqlTableModel::OnManualSubmit);
-    topicModel->select();
-    topicModel->setHeaderData(topics::topicId, Qt::Horizontal,
-                              tr(tableEnum.key(topics::topicId)));
-    topicModel->setHeaderData(topics::Name, Qt::Horizontal,
-                              tr(tableEnum.key(topics::Name)));
+    this->topicModel = topicModel;
 
     //View Init
     ui->listView->setModel(topicModel);
-    ui->listView->setModelColumn(topicModel->fieldIndex(tableEnum.key(topics::Name)));
+    ui->listView->setModelColumn(topicModel->fieldIndex(
+                                     topicTableEnum.key(DbManager::topics::name)));
     ui->listView->setEditTriggers(QAbstractItemView::DoubleClicked);
     ui->listView->setSelectionMode(QAbstractItemView::SingleSelection);
 }
@@ -34,7 +29,8 @@ void TopicsDialog::on_AddTopic_clicked()
     int newRowIndex = topicModel->rowCount();
     topicModel->insertRow(newRowIndex);
     QModelIndex index = topicModel->index(newRowIndex,
-                                          topicModel->fieldIndex(tableEnum.key(topics::Name)));
+                                          topicModel->fieldIndex(
+                                              topicTableEnum.key(DbManager::topics::name)));
     ui->listView->edit(index);
 }
 

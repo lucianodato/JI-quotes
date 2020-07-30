@@ -31,7 +31,7 @@ DbManager::~DbManager()
 
 void DbManager::CreateSchema()
 {
-    if (!query.exec(quotesTableDefinition) && !query.exec(topicsTableDefinition))
+    if (!query.exec(topicsTableDefinition) || !query.exec(quotesTableDefinition))
     {
         qDebug() << "Error running query";
     }

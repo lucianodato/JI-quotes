@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QDebug>
+
 #include "topicsdialog.h"
 #include "quotedialog.h"
 #include "exportdialog.h"
@@ -19,14 +21,6 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-    enum quotes {
-        quoteId,
-        content,
-        author,
-        quoteTopic
-    };
-    Q_ENUM(quotes)
-
 private slots:
     void on_actionQuit_triggered();
 
@@ -38,13 +32,21 @@ private slots:
 
     void on_actionEdit_triggered();
 
+    void on_actionRemove_triggered();
+
+    void on_tableView_doubleClicked();
+
 private:
     Ui::MainWindow *ui;
     TopicsDialog *topicsDialog;
     QuoteDialog *quoteDialog;
     ExportDialog *exportDialog;
 
-    QSqlTableModel *quotesModel;
-    QMetaEnum tableEnum = QMetaEnum::fromType<quotes>();
+    QSqlRelationalTableModel *quotesModel;
+    QDataWidgetMapper *mapper;
+    QSqlTableModel *topicModel;
+
+    QMetaEnum topicTableEnum = QMetaEnum::fromType<DbManager::topics>();
+    QMetaEnum quoteTableEnum = QMetaEnum::fromType<DbManager::quotes>();
 };
 #endif // MAINWINDOW_H

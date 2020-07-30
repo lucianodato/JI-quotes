@@ -1,4 +1,5 @@
 #include "mainwindow.h"
+#include "dbmanager.h"
 #include <QApplication>
 #include <QTranslator>
 #include <QDebug>
