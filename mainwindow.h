@@ -36,9 +36,9 @@ private slots:
 
     void on_actionRemove_triggered();
 
-    void on_tableView_doubleClicked();
-
     void on_lineEdit_textChanged(const QString &arg1);
+
+    void on_tableView_doubleClicked(const QModelIndex &index);
 
 private:
     Ui::MainWindow *ui;

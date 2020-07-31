@@ -107,6 +107,7 @@ void MainWindow::on_actionAdd_triggered()
                                            quotesModel->fieldIndex(
                                                quoteTableEnum.key(DbManager::quotes::quoteId)));
     ui->tableView->setCurrentIndex(index);
+    this->mapper->setCurrentIndex(index.row());
     quoteDialog->open();
 }
 
@@ -121,13 +122,14 @@ void MainWindow::on_actionRemove_triggered()
     quotesModel->submitAll();
 }
 
-void MainWindow::on_tableView_doubleClicked()
-{
-    quoteDialog->open();
-}
-
 void MainWindow::on_lineEdit_textChanged(const QString &arg1)
 {
     proxyModel->setFilterRegExp(QRegExp(arg1, Qt::CaseInsensitive,
                                                 QRegExp::FixedString));
+}
+
+void MainWindow::on_tableView_doubleClicked(const QModelIndex &index)
+{
+    this->mapper->setCurrentIndex(index.row());
+    quoteDialog->open();
 }

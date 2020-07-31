@@ -25,7 +25,6 @@ QuoteDialog::QuoteDialog(QWidget *parent,
     this->mapper->addMapping(ui->lineEdit, DbManager::quotes::author);
     this->mapper->addMapping(ui->dateEdit, DbManager::quotes::created);
     this->mapper->addMapping(ui->comboBox, DbManager::quotes::topicIndex);
-    this->mapper->toFirst();
 }
 
 QuoteDialog::~QuoteDialog()
