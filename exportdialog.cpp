@@ -24,7 +24,8 @@ ExportDialog::~ExportDialog()
 void ExportDialog::on_ExportQuotes_clicked()
 {
     QString fileName = QFileDialog::getSaveFileName(this,
-        tr("Save PDF location"), nullptr, tr(".*pdf"));
+        tr("Save PDF location"), nullptr, tr("Pdf Files (*.pdf)"));
+    fileName += " " + QDate::currentDate().toString(tr("M-d-yy")) + ".pdf";
 
     this->pdfExporter = new QPdfWriter(fileName);
     this->document = new QTextDocument();
@@ -34,9 +35,20 @@ void ExportDialog::on_ExportQuotes_clicked()
     this->accept();
 }
 
+void ExportDialog::on_spinBox_2_valueChanged(int arg1)
+{
+    ui->radioButton_2->setChecked(true);
+    ui->spinBox->setMaximum(qMax(arg1-1, 0));
+}
+
+void ExportDialog::on_spinBox_valueChanged(int arg1)
+{
+    ui->radioButton_2->setChecked(true);
+}
+
 QString ExportDialog::CreateHtmlContent()
 {
-    QString title = QString(tr("<h1 align=left>Famous Quotes - %1</h1>")).arg(QDate::currentDate().toString(tr("M-d-yy")));
+    QString title = "<h1 align=left>" + configurations->value("document/DocumentTitle").toString() + "</h1>";
 
     QString quotes = "<p align=justify>";
     QString author = "<p align=left>" +
@@ -74,15 +86,4 @@ QString ExportDialog::CreateHtmlContent()
         qDebug() << quotes;
         return title + quotes;
     }
-}
-
-void ExportDialog::on_spinBox_2_valueChanged(int arg1)
-{
-    ui->radioButton_2->setChecked(true);
-    ui->spinBox->setMaximum(qMax(arg1-1, 0));
-}
-
-void ExportDialog::on_spinBox_valueChanged(int arg1)
-{
-    ui->radioButton_2->setChecked(true);
 }

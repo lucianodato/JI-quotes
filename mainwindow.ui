@@ -110,8 +110,8 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
-   <addaction name="actionExport"/>
    <addaction name="actionTopics"/>
+   <addaction name="actionExport"/>
    <addaction name="actionConfiguration"/>
    <addaction name="separator"/>
    <addaction name="actionAdd"/>

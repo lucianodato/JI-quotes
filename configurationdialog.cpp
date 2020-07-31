@@ -11,6 +11,7 @@ ConfigurationDialog::ConfigurationDialog(QWidget *parent) :
     configurations = new QSettings();
 
     //View Init
+    ui->lineEdit_2->setText(configurations->value("document/DocumentTitle").toString());
     ui->plainTextEdit->setPlainText(configurations->value("document/RecopilationIntroduction").toString());
     ui->lineEdit->setText(configurations->value("document/RecopilationAuthor").toString());
 }
@@ -22,6 +23,7 @@ ConfigurationDialog::~ConfigurationDialog()
 
 void ConfigurationDialog::on_pushButton_clicked()
 {
+    configurations->setValue("document/DocumentTitle", ui->lineEdit_2->text());
     configurations->setValue("document/RecopilationIntroduction", ui->plainTextEdit->toPlainText());
     configurations->setValue("document/RecopilationAuthor", ui->lineEdit->text());
     this->close();
