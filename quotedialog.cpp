@@ -35,8 +35,8 @@ void QuoteDialog::on_SaveButton_clicked()
 {
     if (ui->comboBox->currentIndex() == 0)
     {
-        quoteModel->index(mapper->currentIndex(),
-                          DbManager::quotes::topicIndex).data() = 1;
+        quoteModel->setData(this->quoteModel->index(mapper->currentIndex(),
+                          DbManager::quotes::topicIndex), 1);
     }
 
     if (quoteModel->index(mapper->currentIndex(), DbManager::quotes::created).data().isNull())

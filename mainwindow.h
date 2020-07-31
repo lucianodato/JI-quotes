@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include <QDebug>
 #include <QSortFilterProxyModel>
+#include <QDataWidgetMapper>
+#include <QMessageBox>
 
 #include "topicsdialog.h"
 #include "quotedialog.h"

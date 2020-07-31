@@ -1,8 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-#include <QDataWidgetMapper>
-
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -126,14 +124,29 @@ void MainWindow::on_actionEdit_triggered()
 
 void MainWindow::on_actionRemove_triggered()
 {
-    quotesModel->removeRow(ui->tableView->currentIndex().row());
-    quotesModel->submitAll();
+    if (ui->tableView->selectionModel()->selectedIndexes().isEmpty())
+    {
+        QMessageBox::critical(this, tr("Remove quote"),
+                              tr("Please select a quote first"),
+                              QMessageBox::Ok, QMessageBox::Ok);
+    }
+    else
+    {
+        int ret = QMessageBox::warning(this, tr("Remove quote"),
+                                   tr("Are you sure you want to delete this quote?"),
+                                   QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Ok);
+        if (ret == QMessageBox::Ok)
+        {
+            quotesModel->removeRow(ui->tableView->currentIndex().row());
+            quotesModel->submitAll();
+        }
+    }
 }
 
 void MainWindow::on_lineEdit_textChanged(const QString &arg1)
 {
     proxyModel->setFilterRegExp(QRegExp(arg1, Qt::CaseInsensitive,
-                                                QRegExp::FixedString));
+                                        QRegExp::FixedString));
 }
 
 void MainWindow::on_tableView_doubleClicked(const QModelIndex &index)
