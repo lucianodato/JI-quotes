@@ -106,13 +106,21 @@ void MainWindow::on_actionAdd_triggered()
     QModelIndex index = quotesModel->index(newRowIndex,
                                            quotesModel->fieldIndex(
                                                quoteTableEnum.key(DbManager::quotes::quoteId)));
-    ui->tableView->setCurrentIndex(index);
     this->mapper->setCurrentIndex(index.row());
     quoteDialog->open();
 }
 
 void MainWindow::on_actionEdit_triggered()
 {
+    if (ui->tableView->currentIndex().isValid())
+    {
+        this->mapper->setCurrentIndex(ui->tableView->currentIndex().row());
+    }
+    else
+    {
+        mapper->toFirst();
+    }
+
     quoteDialog->open();
 }
 

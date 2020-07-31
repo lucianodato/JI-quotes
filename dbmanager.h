@@ -15,12 +15,14 @@ public:
     ~DbManager();
 
     const QString databasepath = "database.db";
-    const QString quotesTableDefinition = "CREATE TABLE IF NOT EXISTS quotes"
-                                          " (quoteId INTEGER PRIMARY KEY ASC, content VARCHAR(2000) NOT NULL,"
-                                          " author VARCHAR(100), created DATE NOT NULL, topicIndex INTEGER NOT NULL, "
-                                          "FOREIGN KEY(topicIndex) REFERENCES topics(topicId))";
-    const QString topicsTableDefinition = "CREATE TABLE IF NOT EXISTS topics "
-                                          "(topicId INTEGER PRIMARY KEY ASC, name VARCHAR(50) NOT NULL)";
+    const QString quotesTableDefinition = "CREATE TABLE IF NOT EXISTS quotes "
+                                          "(quoteId	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,"
+                                          " content TEXT NOT NULL, author TEXT,"
+                                          " created	TEXT NOT NULL, topicIndex INTEGER NOT NULL,"
+                                          " FOREIGN KEY(topicIndex) REFERENCES topics(topicId))";
+    const QString topicsTableDefinition = "CREATE TABLE IF NOT EXISTS topics ("
+                                          "topicId INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE, "
+                                          "name TEXT NOT NULL)";
     const QString indexQuotesCreation = "CREATE UNIQUE INDEX IF NOT EXISTS quote_Id ON quotes(quoteId)";
     const QString indexTopicsCreation = "CREATE UNIQUE INDEX IF NOT EXISTS topic_Id ON topics(topicId)";
 
