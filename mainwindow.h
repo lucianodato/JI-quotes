@@ -10,6 +10,7 @@
 #include "topicsdialog.h"
 #include "quotedialog.h"
 #include "exportdialog.h"
+#include "configurationdialog.h"
 #include "dbmanager.h"
 #include "customsortfilterproxymodel.h"
 
@@ -42,11 +43,14 @@ private slots:
 
     void on_tableView_doubleClicked(const QModelIndex &index);
 
+    void on_actionConfiguration_triggered();
+
 private:
     Ui::MainWindow *ui;
     TopicsDialog *topicsDialog;
     QuoteDialog *quoteDialog;
     ExportDialog *exportDialog;
+    ConfigurationDialog *configurationDialog;
 
     QSqlRelationalTableModel *quotesModel;
     CustomSortFilterProxyModel *proxyModel;

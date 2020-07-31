@@ -91,6 +91,7 @@
     </property>
     <addaction name="actionTopics"/>
     <addaction name="actionExport"/>
+    <addaction name="actionConfiguration"/>
     <addaction name="actionQuit"/>
    </widget>
    <addaction name="menuMenu"/>
@@ -111,6 +112,7 @@
    </attribute>
    <addaction name="actionExport"/>
    <addaction name="actionTopics"/>
+   <addaction name="actionConfiguration"/>
    <addaction name="separator"/>
    <addaction name="actionAdd"/>
    <addaction name="actionRemove"/>
@@ -168,6 +170,15 @@
    </property>
    <property name="text">
     <string>Remove</string>
+   </property>
+  </action>
+  <action name="actionConfiguration">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/custom-icons/settings.png</normaloff>:/icons/custom-icons/settings.png</iconset>
+   </property>
+   <property name="text">
+    <string>Configuration</string>
    </property>
   </action>
  </widget>

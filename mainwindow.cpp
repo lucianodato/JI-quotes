@@ -30,7 +30,8 @@ MainWindow::MainWindow(QWidget *parent)
     //Child dialogs
     this->topicsDialog = new TopicsDialog(this, topicModel);
     this->quoteDialog = new QuoteDialog(this, quotesModel, mapper);
-    this->exportDialog = new ExportDialog(this);
+    this->exportDialog = new ExportDialog(this, quotesModel);
+    this->configurationDialog = new ConfigurationDialog(this);
 }
 
 MainWindow::~MainWindow()
@@ -74,6 +75,7 @@ bool MainWindow::SetupModels()
         qDebug() << "Error getting data from database";
         return false;
     }
+    while (quotesModel->canFetchMore())quotesModel->fetchMore();
 
     //Mapper init
     mapper = new QDataWidgetMapper();
@@ -113,13 +115,14 @@ void MainWindow::on_actionEdit_triggered()
     if (ui->tableView->currentIndex().isValid())
     {
         this->mapper->setCurrentIndex(ui->tableView->currentIndex().row());
+        quoteDialog->open();
     }
     else
     {
-        mapper->toFirst();
+        QMessageBox::critical(this, tr("Edit quote"),
+                              tr("Please select a quote first"),
+                              QMessageBox::Ok, QMessageBox::Ok);
     }
-
-    quoteDialog->open();
 }
 
 void MainWindow::on_actionRemove_triggered()
@@ -153,4 +156,9 @@ void MainWindow::on_tableView_doubleClicked(const QModelIndex &index)
 {
     this->mapper->setCurrentIndex(index.row());
     quoteDialog->open();
+}
+
+void MainWindow::on_actionConfiguration_triggered()
+{
+    this->configurationDialog->open();
 }
