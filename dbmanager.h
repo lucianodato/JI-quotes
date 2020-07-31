@@ -16,11 +16,11 @@ public:
 
     const QString databasepath = "database.db";
     const QString quotesTableDefinition = "create table if not exists quotes"
-                                          " (quoteId integer primary key, content varchar(2000),"
-                                          " author varchar(100), topicIndex int, "
+                                          " (quoteId integer PRIMARY KEY ASC, content varchar(2000) NOT NULL,"
+                                          " author varchar(100), created date NOT NULL, topicIndex int NOT NULL, "
                                           "FOREIGN KEY(topicIndex) REFERENCES topics(topicId))";
     const QString topicsTableDefinition = "create table if not exists topics "
-                                          "(topicId integer primary key, name varchar(50))";
+                                          "(topicId integer PRIMARY KEY ASC, name varchar(50) NOT NULL)";
 
     enum topics {
         topicId,
@@ -32,6 +32,7 @@ public:
         quoteId,
         content,
         author,
+        created,
         topicIndex
     };
     Q_ENUM(quotes)

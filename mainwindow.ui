@@ -51,6 +51,9 @@
         <property name="placeholderText">
          <string>Filter quotes by any field</string>
         </property>
+        <property name="clearButtonEnabled">
+         <bool>true</bool>
+        </property>
        </widget>
       </item>
      </layout>

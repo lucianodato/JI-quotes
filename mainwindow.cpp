@@ -10,50 +10,20 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
     //Model Init
-    quotesModel = new QSqlRelationalTableModel();
-    quotesModel->setTable(quoteTableEnum.name());
-    quotesModel->setHeaderData(DbManager::quotes::quoteId, Qt::Horizontal,
-                               tr("quoteId"));
-    quotesModel->setHeaderData(DbManager::quotes::content, Qt::Horizontal,
-                               tr("Quote"));
-    quotesModel->setHeaderData(DbManager::quotes::author, Qt::Horizontal,
-                               tr("Author"));
-    quotesModel->setHeaderData(DbManager::quotes::topicIndex, Qt::Horizontal,
-                               tr("Topic"));
-    quotesModel->setEditStrategy(QSqlRelationalTableModel::OnManualSubmit);
-    quotesModel->setRelation(quotesModel->fieldIndex(quoteTableEnum.key(DbManager::quotes::topicIndex)),
-                             QSqlRelation(topicTableEnum.name(),
-                                          topicTableEnum.key(DbManager::topics::topicId),
-                                          topicTableEnum.key(DbManager::topics::name)));
-
-    topicModel = new QSqlTableModel();
-    topicModel->setTable(topicTableEnum.name());
-    topicModel->setEditStrategy(QSqlTableModel::OnManualSubmit);
-    topicModel->setHeaderData(DbManager::topics::topicId, Qt::Horizontal,
-                              tr("topicId"));
-    topicModel->setHeaderData(DbManager::topics::name, Qt::Horizontal,
-                              tr("Name"));
-
-    //Populate models
-    if (!quotesModel->select() || !topicModel->select()) {
-        qDebug() << "Error getting data from database";
-        return;
-    }
+    SetupModels();
 
     //View Init
-    ui->tableView->setModel(quotesModel);
+    ui->tableView->setModel(proxyModel);
     ui->tableView->hideColumn(DbManager::quotes::quoteId);
     ui->tableView->setEditTriggers(QAbstractItemView::NoEditTriggers);
     ui->tableView->setSelectionMode(QAbstractItemView::SingleSelection);
     ui->tableView->setSelectionBehavior(QAbstractItemView::SelectRows);
     ui->tableView->horizontalHeader()->setSectionResizeMode(DbManager::quotes::content, QHeaderView::Stretch);
     ui->tableView->horizontalHeader()->setSectionResizeMode(DbManager::quotes::author, QHeaderView::ResizeToContents);
+    ui->tableView->horizontalHeader()->setSectionResizeMode(DbManager::quotes::created, QHeaderView::ResizeToContents);
     ui->tableView->horizontalHeader()->setSectionResizeMode(DbManager::quotes::topicIndex, QHeaderView::ResizeToContents);
     ui->tableView->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
 
-    //Mapper init
-    mapper = new QDataWidgetMapper();
-    mapper->setModel(quotesModel);
     connect(ui->tableView->selectionModel(),
             &QItemSelectionModel::currentRowChanged,
             mapper,
@@ -68,6 +38,50 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+bool MainWindow::SetupModels()
+{
+    quotesModel = new QSqlRelationalTableModel();
+    quotesModel->setTable(quoteTableEnum.name());
+    quotesModel->setHeaderData(DbManager::quotes::quoteId, Qt::Horizontal,
+                               tr("quoteId"));
+    quotesModel->setHeaderData(DbManager::quotes::content, Qt::Horizontal,
+                               tr("Quote"));
+    quotesModel->setHeaderData(DbManager::quotes::author, Qt::Horizontal,
+                               tr("Author"));
+    quotesModel->setHeaderData(DbManager::quotes::created, Qt::Horizontal,
+                               tr("Creation Date"));
+    quotesModel->setHeaderData(DbManager::quotes::topicIndex, Qt::Horizontal,
+                               tr("Topic"));
+    quotesModel->setEditStrategy(QSqlRelationalTableModel::OnManualSubmit);
+    quotesModel->setRelation(quotesModel->fieldIndex(quoteTableEnum.key(DbManager::quotes::topicIndex)),
+                             QSqlRelation(topicTableEnum.name(),
+                                          topicTableEnum.key(DbManager::topics::topicId),
+                                          topicTableEnum.key(DbManager::topics::name)));
+
+    proxyModel = new QSortFilterProxyModel();
+    proxyModel->setSourceModel(quotesModel);
+
+    topicModel = new QSqlTableModel();
+    topicModel->setTable(topicTableEnum.name());
+    topicModel->setEditStrategy(QSqlTableModel::OnManualSubmit);
+    topicModel->setHeaderData(DbManager::topics::topicId, Qt::Horizontal,
+                              tr("topicId"));
+    topicModel->setHeaderData(DbManager::topics::name, Qt::Horizontal,
+                              tr("Name"));
+
+    //Populate models
+    if (!quotesModel->select() || !topicModel->select()) {
+        qDebug() << "Error getting data from database";
+        return false;
+    }
+
+    //Mapper init
+    mapper = new QDataWidgetMapper();
+    mapper->setModel(quotesModel);
+
+    return true;
 }
 
 void MainWindow::on_actionQuit_triggered()
@@ -110,4 +124,11 @@ void MainWindow::on_actionRemove_triggered()
 void MainWindow::on_tableView_doubleClicked()
 {
     quoteDialog->open();
+}
+
+void MainWindow::on_lineEdit_textChanged(const QString &arg1)
+{
+    proxyModel->setFilterRegExp(QRegExp(arg1, Qt::CaseInsensitive,
+                                                QRegExp::FixedString));
+    proxyModel->setFilterKeyColumn(DbManager::quotes::content);
 }

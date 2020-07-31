@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QDebug>
+#include <QSortFilterProxyModel>
 
 #include "topicsdialog.h"
 #include "quotedialog.h"
@@ -36,6 +37,8 @@ private slots:
 
     void on_tableView_doubleClicked();
 
+    void on_lineEdit_textChanged(const QString &arg1);
+
 private:
     Ui::MainWindow *ui;
     TopicsDialog *topicsDialog;
@@ -43,10 +46,13 @@ private:
     ExportDialog *exportDialog;
 
     QSqlRelationalTableModel *quotesModel;
+    QSortFilterProxyModel *proxyModel;
     QDataWidgetMapper *mapper;
     QSqlTableModel *topicModel;
 
     QMetaEnum topicTableEnum = QMetaEnum::fromType<DbManager::topics>();
     QMetaEnum quoteTableEnum = QMetaEnum::fromType<DbManager::quotes>();
+
+    bool SetupModels();
 };
 #endif // MAINWINDOW_H
