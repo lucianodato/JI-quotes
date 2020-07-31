@@ -1,0 +1,19 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>custom-icons/circle-minus.png</file>
+        <file>custom-icons/circle-plus.png</file>
+        <file>custom-icons/file-download.png</file>
+        <file>custom-icons/logout.png</file>
+        <file>custom-icons/message-circle.png</file>
+        <file>custom-icons/search.png</file>
+        <file>custom-icons/floppy-disk.png</file>
+        <file>custom-icons/file-minus.png</file>
+        <file>custom-icons/file-plus.png</file>
+        <file>custom-icons/file-text.png</file>
+        <file>custom-icons/license.png</file>
+        <file>custom-icons/settings.png</file>
+    </qresource>
+    <qresource prefix="/translations">
+        <file>JI-quotes_es_AR.qm</file>
+    </qresource>
+</RCC>
