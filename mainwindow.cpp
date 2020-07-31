@@ -60,7 +60,7 @@ bool MainWindow::SetupModels()
                                           topicTableEnum.key(DbManager::topics::topicId),
                                           topicTableEnum.key(DbManager::topics::name)));
 
-    proxyModel = new QSortFilterProxyModel();
+    proxyModel = new CustomSortFilterProxyModel();
     proxyModel->setSourceModel(quotesModel);
 
     topicModel = new QSqlTableModel();
@@ -130,5 +130,4 @@ void MainWindow::on_lineEdit_textChanged(const QString &arg1)
 {
     proxyModel->setFilterRegExp(QRegExp(arg1, Qt::CaseInsensitive,
                                                 QRegExp::FixedString));
-    proxyModel->setFilterKeyColumn(DbManager::quotes::content);
 }

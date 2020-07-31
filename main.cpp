@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
 
     // Initialize the database:
     DbManager database;
-    database.CreateSchema();
+    database.CreateDatabase();
 
     // Load spanish translation
     QTranslator translator;

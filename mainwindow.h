@@ -9,6 +9,7 @@
 #include "quotedialog.h"
 #include "exportdialog.h"
 #include "dbmanager.h"
+#include "customsortfilterproxymodel.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -46,7 +47,7 @@ private:
     ExportDialog *exportDialog;
 
     QSqlRelationalTableModel *quotesModel;
-    QSortFilterProxyModel *proxyModel;
+    CustomSortFilterProxyModel *proxyModel;
     QDataWidgetMapper *mapper;
     QSqlTableModel *topicModel;
 

@@ -7,6 +7,7 @@
 #include <QItemSelectionModel>
 #include <QSqlRelation>
 #include <QSqlRelationalDelegate>
+#include <QDate>
 
 #include "dbmanager.h"
 

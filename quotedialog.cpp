@@ -16,12 +16,14 @@ QuoteDialog::QuoteDialog(QWidget *parent,
     ui->comboBox->setModel(this->quoteModel->relationModel(DbManager::quotes::topicIndex));
     ui->comboBox->setModelColumn(DbManager::topics::name);
     ui->comboBox->setCurrentIndex(0);
+    ui->dateEdit->setDate(QDate::currentDate());
 
     //Mapper Init
     this->mapper = mapper;
     this->mapper->setItemDelegate(new QSqlRelationalDelegate());
     this->mapper->addMapping(ui->plainTextEdit, DbManager::quotes::content);
     this->mapper->addMapping(ui->lineEdit, DbManager::quotes::author);
+    this->mapper->addMapping(ui->dateEdit, DbManager::quotes::created);
     this->mapper->addMapping(ui->comboBox, DbManager::quotes::topicIndex);
     this->mapper->toFirst();
 }

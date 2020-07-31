@@ -29,10 +29,15 @@ DbManager::~DbManager()
     }
 }
 
-void DbManager::CreateSchema()
+void DbManager::CreateDatabase()
 {
     if (!query.exec(topicsTableDefinition) || !query.exec(quotesTableDefinition))
     {
-        qDebug() << "Error running query";
+        qDebug() << "Error creating tables";
+    }
+
+    if (!query.exec(indexQuotesCreation) || !query.exec(indexTopicsCreation))
+    {
+        qDebug() << "Error creating indexes";
     }
 }
