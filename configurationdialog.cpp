@@ -8,7 +8,7 @@ ConfigurationDialog::ConfigurationDialog(QWidget *parent) :
     ui->setupUi(this);
 
     //Settings Init
-    configurations = new QSettings();
+    configurations = new QSettings("JI-quotes",tr("JI-Quotes"));
 
     //View Init
     ui->lineEdit_2->setText(configurations->value("document/DocumentTitle").toString());
