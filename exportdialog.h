@@ -9,7 +9,6 @@
 #include <QPdfWriter>
 #include <QDate>
 #include <QFileDialog>
-#include <QDebug>
 #include <QSettings>
 
 namespace Ui {

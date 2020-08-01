@@ -72,7 +72,9 @@ bool MainWindow::SetupModels()
 
     //Populate models
     if (!quotesModel->select() || !topicModel->select()) {
-        qDebug() << "Error getting data from database";
+        QMessageBox::critical(this, tr("Data Error"),
+                              tr("Error loading database data into applications"),
+                              QMessageBox::Ok, QMessageBox::Ok);
         return false;
     }
     while (quotesModel->canFetchMore())quotesModel->fetchMore();

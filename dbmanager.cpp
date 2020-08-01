@@ -1,23 +1,37 @@
 #include "dbmanager.h"
-#include <QDebug>
 
 DbManager::DbManager()
 {
-    if (!QSqlDatabase::drivers().contains("QSQLITE")){
-        qDebug() << "Database driver not found";
+    //Create directory to put the database
+    QString applicationDirectoryPath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+    QDir applicationDirectory(applicationDirectoryPath);
+    if (!applicationDirectory.exists())
+    {
+        applicationDirectory.mkpath(applicationDirectoryPath);
+    }
+    QString databasePath = applicationDirectoryPath + "/" + databaseName;
+
+    if (!QSqlDatabase::drivers().contains("QSQLITE"))
+    {
+        QMessageBox::critical(nullptr, tr("Database Error"),
+                              tr("Database driver not found"),
+                              QMessageBox::Ok, QMessageBox::Ok);
+        QCoreApplication::exit();
     }
 
     database = QSqlDatabase::addDatabase("QSQLITE");
-    database.setDatabaseName(databasepath);
-    database.open();
+    database.setDatabaseName(databasePath);
 
-    if(database.isOpen())
+    if(database.open())
     {
         query = QSqlQuery(database);
     }
     else
     {
-        qDebug() << "There was an error creating or opening the database";
+        QMessageBox::critical(nullptr, tr("Database Error"),
+                              tr("There was an error creating or opening the database"),
+                              QMessageBox::Ok, QMessageBox::Ok);
+        QCoreApplication::exit();
     }
 }
 
@@ -33,11 +47,22 @@ void DbManager::CreateDatabase()
 {
     if (!query.exec(topicsTableDefinition) || !query.exec(quotesTableDefinition))
     {
-        qDebug() << "Error creating tables";
+        QMessageBox::critical(nullptr, tr("Database Error"),
+                              tr("Error creating tables"),
+                              QMessageBox::Ok, QMessageBox::Ok);
+        QCoreApplication::exit();
     }
 
     if (!query.exec(indexQuotesCreation) || !query.exec(indexTopicsCreation))
     {
-        qDebug() << "Error creating indexes";
+        QMessageBox::critical(nullptr, tr("Database Error"),
+                              tr("Error creating indexes"),
+                              QMessageBox::Ok, QMessageBox::Ok);
+        QCoreApplication::exit();
     }
+}
+
+bool DbManager::IsDatabaseOpen()
+{
+    return database.isOpen();
 }

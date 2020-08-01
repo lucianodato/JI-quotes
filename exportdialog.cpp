@@ -38,7 +38,7 @@ void ExportDialog::on_ExportQuotes_clicked()
 void ExportDialog::on_spinBox_2_valueChanged(int arg1)
 {
     ui->radioButton_2->setChecked(true);
-    ui->spinBox->setMaximum(qMax(arg1-1, 0));
+    ui->spinBox->setMaximum(qMax(arg1 - 1, 0));
 }
 
 void ExportDialog::on_spinBox_valueChanged(int arg1)
@@ -83,7 +83,6 @@ QString ExportDialog::CreateHtmlContent()
 
         quotes += "</ol></p>";
 
-        qDebug() << quotes;
         return title + quotes;
     }
 }

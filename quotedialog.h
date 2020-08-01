@@ -9,7 +9,6 @@
 #include <QSqlRelationalDelegate>
 #include <QDate>
 #include <QSqlRecord>
-#include <QDebug>
 
 #include "dbmanager.h"
 
