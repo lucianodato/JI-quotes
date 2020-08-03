@@ -1,5 +1,5 @@
-#include "mainwindow.h"
-#include "dbmanager.h"
+#include "src/mainwindow.h"
+#include "src/dbmanager.h"
 #include <QApplication>
 #include <QTranslator>
 
@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
         database->CreateDatabase();
         // Load spanish translation
         QTranslator translator;
-        if (translator.load(":/translations/JI-quotes_es_AR.qm"))
+        if (translator.load(":/translations/translations/JI-quotes_es_AR.qm"))
         {
             application.installTranslator(&translator);
         }
