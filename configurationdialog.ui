@@ -21,7 +21,7 @@
    <item row="2" column="0">
     <widget class="QLabel" name="label">
      <property name="text">
-      <string>Recopilation Introduction</string>
+      <string>Document Introduction</string>
      </property>
     </widget>
    </item>
@@ -31,7 +31,7 @@
    <item row="3" column="0">
     <widget class="QLabel" name="label_2">
      <property name="text">
-      <string>Recopilation Author</string>
+      <string>Document Author</string>
      </property>
     </widget>
    </item>
