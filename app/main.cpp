@@ -1,5 +1,5 @@
-#include "mainwindow.h"
-#include "dbmanager.h"
+#include "src/mainwindow.h"
+#include "src/dbmanager.h"
 #include <QApplication>
 #include <QTranslator>
 

@@ -1,0 +1,2 @@
+INCLUDEPATH += $$PWD/app
+SRC_DIR = $$PWD

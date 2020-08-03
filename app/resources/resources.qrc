@@ -14,6 +14,6 @@
         <file>custom-icons/settings.png</file>
     </qresource>
     <qresource prefix="/translations">
-        <file>JI-quotes_es_AR.qm</file>
+        <file>translations/JI-quotes_es_AR.qm</file>
     </qresource>
 </RCC>
