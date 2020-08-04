@@ -12,6 +12,7 @@
         <file>custom-icons/file-text.png</file>
         <file>custom-icons/license.png</file>
         <file>custom-icons/settings.png</file>
+        <file>custom-icons/copy.png</file>
     </qresource>
     <qresource prefix="/translations">
         <file>translations/JI-quotes_es_AR.qm</file>

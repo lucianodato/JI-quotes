@@ -2,7 +2,9 @@
 #define TOPICS_H
 
 #include <QDialog>
+#include <QSortFilterProxyModel>
 #include <QSqlRelationalTableModel>
+#include <QSqlRecord>
 
 #include "dbmanager.h"
 
@@ -30,6 +32,7 @@ private:
     Ui::TopicsDialog *ui;
 
     QSqlTableModel *topicModel;
+    QSortFilterProxyModel *orderedModel;
 
     QMetaEnum topicTableEnum = QMetaEnum::fromType<DbManager::topics>();
 };

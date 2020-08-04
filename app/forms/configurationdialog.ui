@@ -14,7 +14,7 @@
    <string>Configurations</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="resources.qrc">
+   <iconset resource="../resources/resources.qrc">
     <normaloff>:/icons/custom-icons/license.png</normaloff>:/icons/custom-icons/license.png</iconset>
   </property>
   <layout class="QFormLayout" name="formLayout">
@@ -59,7 +59,7 @@
         <string>Save</string>
        </property>
        <property name="icon">
-        <iconset resource="resources.qrc">
+        <iconset resource="../resources/resources.qrc">
          <normaloff>:/icons/custom-icons/floppy-disk.png</normaloff>:/icons/custom-icons/floppy-disk.png</iconset>
        </property>
       </widget>
@@ -85,8 +85,14 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>lineEdit_2</tabstop>
+  <tabstop>plainTextEdit</tabstop>
+  <tabstop>lineEdit</tabstop>
+  <tabstop>pushButton</tabstop>
+ </tabstops>
  <resources>
-  <include location="resources.qrc"/>
+  <include location="../resources/resources.qrc"/>
  </resources>
  <connections/>
 </ui>

@@ -7,6 +7,7 @@ TEMPLATE = app
 
 SOURCES += \
     main.cpp \
+    src/datedelegate.cpp \
     src/mainwindow.cpp \
     src/configurationdialog.cpp \
     src/customsortfilterproxymodel.cpp \
@@ -16,6 +17,7 @@ SOURCES += \
     src/topicsdialog.cpp
 
 HEADERS += \
+    src/datedelegate.h \
     src/mainwindow.h \
     src/configurationdialog.h \
     src/customsortfilterproxymodel.h \
@@ -34,11 +36,15 @@ FORMS += \
 RESOURCES += \
     resources/resources.qrc
 
-## The following define makes your compiler emit warnings if you use
-## any Qt feature that has been marked deprecated (the exact warnings
-## depend on your compiler). Please consult the documentation of the
-## deprecated API in order to know how to port your code away from it.
-#DEFINES += QT_DEPRECATED_WARNINGS
+DISTFILES += \
+    ../README.md \
+    resources/translations/JI-quotes_es_AR.ts
+
+# The following define makes your compiler emit warnings if you use
+# any Qt feature that has been marked deprecated (the exact warnings
+# depend on your compiler). Please consult the documentation of the
+# deprecated API in order to know how to port your code away from it.
+DEFINES += QT_DEPRECATED_WARNINGS
 
 ## You can also make your code fail to compile if it uses deprecated APIs.
 ## In order to do so, uncomment the following line.

@@ -9,6 +9,7 @@
 #include <QSqlRelationalDelegate>
 #include <QDate>
 #include <QSqlRecord>
+#include <QComboBox>
 
 #include "dbmanager.h"
 

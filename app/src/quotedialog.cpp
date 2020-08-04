@@ -36,7 +36,8 @@ void QuoteDialog::on_SaveButton_clicked()
     if (ui->comboBox->currentIndex() == 0)
     {
         quoteModel->setData(this->quoteModel->index(mapper->currentIndex(),
-                          DbManager::quotes::topicIndex), 1);
+                          DbManager::quotes::topicIndex),
+                            ui->comboBox->model()->index(0, DbManager::topics::topicId).data().toInt());
     }
 
     if (quoteModel->index(mapper->currentIndex(), DbManager::quotes::created).data().isNull())
@@ -44,11 +45,11 @@ void QuoteDialog::on_SaveButton_clicked()
         quoteModel->setData(this->quoteModel->index(mapper->currentIndex(),
                           DbManager::quotes::created), QDate::currentDate().toString("yyyy-MM-dd"));
     }
+    quoteModel->submitAll();
 
     //Reset UI state
     ui->comboBox->setCurrentIndex(0);
 
-    quoteModel->submitAll();
     this->accept();
 }
 
