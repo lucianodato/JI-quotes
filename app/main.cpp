@@ -2,6 +2,7 @@
 #include "src/dbmanager.h"
 #include <QApplication>
 #include <QTranslator>
+#include <QLibraryInfo>
 
 int main(int argc, char *argv[])
 {
@@ -13,15 +14,20 @@ int main(int argc, char *argv[])
     if(database->IsDatabaseOpen())
     {
         database->CreateDatabase();
-        // Load spanish translation
+
+        // Load translation
         QTranslator translator;
+        QLocale spanishArgentina(QLocale::Spanish, QLocale::Argentina);
+        translator.load(spanishArgentina,
+                QLibraryInfo::location(QLibraryInfo::TranslationsPath));
+        application.installTranslator(&translator);
         if (translator.load(":/translations/translations/JI-quotes_es_AR.qm"))
         {
             application.installTranslator(&translator);
         }
 
         MainWindow windows;
-        windows.show();
+        windows.showMaximized();
 
         return application.exec();
     }

@@ -1,7 +1,7 @@
 # JI-quotes
 A very basic quotes recopilation tool.
 
-This tools is for my father that has the hobby of compiling famous quotes that has meaning for his life.
+This tools is for my father that has the hobby of compiling famous quotes that are representative for his life.
 
 # Install instructions for Linux
 There's a provided installer in Releases. On some systems you might need to install libxcb. For example on ubuntu:

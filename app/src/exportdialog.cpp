@@ -9,7 +9,7 @@ ExportDialog::ExportDialog(QWidget *parent, QSqlRelationalTableModel *quoteModel
 
     //Model init
     this->quoteModel = quoteModel;
-    this->configurations = new QSettings();
+    this->configurations = new QSettings("JI-quotes",tr("JI-quotes"));
 
     //View Init
     ui->spinBox_2->setMaximum(quoteModel->rowCount());
@@ -29,7 +29,8 @@ void ExportDialog::on_ExportQuotes_clicked()
 
     this->pdfExporter = new QPdfWriter(fileName);
     this->document = new QTextDocument();
-    this->document->setHtml(CreateHtmlContent());
+    this->document->setHtml(CreateHtmlContent().toHtmlEscaped());
+    this->document->setHtml(this->document->toPlainText());
     document->print(pdfExporter);
 
     this->accept();
@@ -48,16 +49,17 @@ void ExportDialog::on_spinBox_valueChanged(int arg1)
 
 QString ExportDialog::CreateHtmlContent()
 {
-    QString title = "<h1 align=left>" + configurations->value("document/DocumentTitle").toString() + "</h1>";
-
-    QString quotes = "<p align=justify>";
+    QString title = "<h1 align=left>" +
+            configurations->value("document/DocumentTitle").toString()
+            + "</h1>";
     QString author = "<p align=left>" +
-            configurations->value("document/RecopilationAuthor").toString()
+            configurations->value("document/DocumentAuthor").toString()
             + "</p>";
     QString introduction = "<p align=justify>" +
-            configurations->value("document/RecopilationIntroduction").toString()
+            configurations->value("document/DocumentIntroduction").toString()
             + "</p>";
 
+    QString quotes = "<p align=justify>";
     if(ui->radioButton->isChecked())
     {
         quotes += "<ol>";
@@ -74,7 +76,7 @@ QString ExportDialog::CreateHtmlContent()
     else
     {
         quotes += QString("<ol start=\"%1\">").arg(QString::number(ui->spinBox->value()));
-         for (int i = ui->spinBox->value(); i < ui->spinBox_2->value(); i++)
+        for (int i = ui->spinBox->value(); i < ui->spinBox_2->value(); i++)
         {
             quotes += "<li>" + quoteModel->index(i, DbManager::quotes::content).data().toString()
                     + " - " + quoteModel->index(i, DbManager::quotes::author).data().toString()

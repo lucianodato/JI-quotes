@@ -5,6 +5,7 @@
 #include <QSortFilterProxyModel>
 #include <QDataWidgetMapper>
 #include <QMessageBox>
+#include <QClipboard>
 
 #include "topicsdialog.h"
 #include "quotedialog.h"
@@ -12,6 +13,7 @@
 #include "configurationdialog.h"
 #include "dbmanager.h"
 #include "customsortfilterproxymodel.h"
+#include "datedelegate.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -44,12 +46,17 @@ private slots:
 
     void on_actionConfiguration_triggered();
 
+    void fetch_data();
+
+    void on_actionCopy_Quote_triggered();
+
 private:
     Ui::MainWindow *ui;
     TopicsDialog *topicsDialog;
     QuoteDialog *quoteDialog;
     ExportDialog *exportDialog;
     ConfigurationDialog *configurationDialog;
+    QMenu *tableMenu;
 
     QSqlRelationalTableModel *quotesModel;
     CustomSortFilterProxyModel *proxyModel;
@@ -59,6 +66,9 @@ private:
     QMetaEnum topicTableEnum = QMetaEnum::fromType<DbManager::topics>();
     QMetaEnum quoteTableEnum = QMetaEnum::fromType<DbManager::quotes>();
 
+    DateDelegate *dateDelegate;
+
     bool SetupModels();
+    void ConnectSignalAndSlots();
 };
 #endif // MAINWINDOW_H

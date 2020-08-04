@@ -14,7 +14,7 @@
    <string>Export Quotes</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="resources.qrc">
+   <iconset resource="../resources/resources.qrc">
     <normaloff>:/icons/custom-icons/license.png</normaloff>:/icons/custom-icons/license.png</iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
@@ -110,7 +110,7 @@
         <string>Export</string>
        </property>
        <property name="icon">
-        <iconset resource="resources.qrc">
+        <iconset resource="../resources/resources.qrc">
          <normaloff>:/icons/custom-icons/file-download.png</normaloff>:/icons/custom-icons/file-download.png</iconset>
        </property>
       </widget>
@@ -121,11 +121,13 @@
  </widget>
  <tabstops>
   <tabstop>radioButton</tabstop>
+  <tabstop>radioButton_2</tabstop>
   <tabstop>spinBox</tabstop>
   <tabstop>spinBox_2</tabstop>
+  <tabstop>ExportQuotes</tabstop>
  </tabstops>
  <resources>
-  <include location="resources.qrc"/>
+  <include location="../resources/resources.qrc"/>
  </resources>
  <connections/>
 </ui>
