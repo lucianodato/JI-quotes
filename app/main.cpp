@@ -21,6 +21,7 @@ int main(int argc, char *argv[])
         translator.load(spanishArgentina,
                 QLibraryInfo::location(QLibraryInfo::TranslationsPath));
         application.installTranslator(&translator);
+
         if (translator.load(":/translations/translations/JI-quotes_es_AR.qm"))
         {
             application.installTranslator(&translator);

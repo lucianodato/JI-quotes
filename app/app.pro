@@ -15,7 +15,6 @@ SOURCES += \
     src/exportdialog.cpp \
     src/quotedialog.cpp \
     src/topicsdialog.cpp
-    src/datedelegate.cpp \
 
 HEADERS += \
     src/datedelegate.h \
@@ -26,7 +25,6 @@ HEADERS += \
     src/exportdialog.h \
     src/quotedialog.h \
     src/topicsdialog.h
-    src/datedelegate.h \
 
 FORMS += \
     forms/configurationdialog.ui \
@@ -39,6 +37,7 @@ RESOURCES += \
     resources/resources.qrc
 
 DISTFILES += \
+    ../README.md \
     resources/translations/JI-quotes_es_AR.ts
 
 # The following define makes your compiler emit warnings if you use
@@ -56,4 +55,3 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #qnx: target.path = /tmp/$${TARGET}/bin
 #else: unix:!android: target.path = /opt/$${TARGET}/bin
 #!isEmpty(target.path): INSTALLS += target
-
