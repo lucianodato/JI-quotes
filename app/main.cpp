@@ -18,9 +18,11 @@ int main(int argc, char *argv[])
         // Load translation
         QTranslator translator;
         QLocale spanishArgentina(QLocale::Spanish, QLocale::Argentina);
-        translator.load(spanishArgentina,
-                QLibraryInfo::location(QLibraryInfo::TranslationsPath));
-        application.installTranslator(&translator);
+        bool isTranslationLoaded = translator.load(spanishArgentina,
+                QLibraryInfo::path(QLibraryInfo::TranslationsPath));
+        if (isTranslationLoaded){
+            application.installTranslator(&translator);
+        }
 
         if (translator.load(":/translations/translations/JI-quotes_es_AR.qm"))
         {

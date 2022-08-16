@@ -11,8 +11,8 @@ bool CustomSortFilterProxyModel::filterAcceptsRow(int sourceRow, const QModelInd
     QModelIndex index2 = sourceModel()->index(sourceRow, DbManager::quotes::topicIndex, sourceParent);
     QModelIndex index3 = sourceModel()->index(sourceRow, DbManager::quotes::created, sourceParent);
 
-    return (sourceModel()->data(index0).toString().contains(filterRegExp())
-            || sourceModel()->data(index1).toString().contains(filterRegExp())
-            || sourceModel()->data(index2).toString().contains(filterRegExp())
-            || sourceModel()->data(index3).toString().contains(filterRegExp()));
+    return (sourceModel()->data(index0).toString().contains(filterRegularExpression())
+            || sourceModel()->data(index1).toString().contains(filterRegularExpression())
+            || sourceModel()->data(index2).toString().contains(filterRegularExpression())
+            || sourceModel()->data(index3).toString().contains(filterRegularExpression()));
 }
